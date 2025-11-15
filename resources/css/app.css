@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Custom theme colors */
+    --color-primary: oklch(0.6 0.25 264); /* Purple */
+    --color-secondary: oklch(0.7 0.15 200); /* Blue */
+
+    /* Winter theme colors */
+    --color-winter-light: oklch(0.95 0.02 240);
+    --color-winter: oklch(0.7 0.12 240);
+    --color-winter-dark: oklch(0.4 0.15 240);
+
+    /* Christmas theme colors */
+    --color-christmas-red: oklch(0.55 0.22 25);
+    --color-christmas-green: oklch(0.5 0.15 145);
+    --color-christmas-gold: oklch(0.75 0.12 85);
+
+    /* Valentine theme colors */
+    --color-valentine-pink: oklch(0.75 0.15 350);
+    --color-valentine-red: oklch(0.55 0.22 25);
+    --color-valentine-rose: oklch(0.85 0.08 350);
+
+    /* Animations */
+    --animate-spin-slow: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Wheel spinning animation */
+.wheel {
+    transition: transform 2.5s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+    transform-origin: center;
+}
+
+.wheel-spinning {
+    transition: transform 2.5s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+/* Theme-specific overrides */
+.theme-winter {
+    --color-primary: var(--color-winter);
+    --color-secondary: var(--color-winter-light);
+}
+
+.theme-christmas {
+    --color-primary: var(--color-christmas-red);
+    --color-secondary: var(--color-christmas-green);
+}
+
+.theme-valentine {
+    --color-primary: var(--color-valentine-red);
+    --color-secondary: var(--color-valentine-pink);
+}
