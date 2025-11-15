@@ -4,6 +4,7 @@ namespace App\Actions\Drawings;
 
 use App\Models\Assignment;
 use App\Models\Event;
+use App\Notifications\AssignmentsReady;
 use Illuminate\Support\Facades\DB;
 use Lorisleiva\Actions\Concerns\AsAction;
 use RuntimeException;
@@ -53,6 +54,10 @@ class DrawNames
 
             $event->update(['drawing_completed_at' => now()]);
         });
+
+        // Send push notification after transaction commits
+        $event->refresh();
+        $event->notify(new AssignmentsReady($event));
     }
 
     protected function attemptDrawing($participants, array $exclusions): ?array

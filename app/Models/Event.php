@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Notifications\Notifiable;
+use NotificationChannels\WebPush\HasPushSubscriptions;
 
 class Event extends Model
 {
     /** @use HasFactory<\Database\Factories\EventFactory> */
-    use HasFactory;
+    use HasFactory, HasPushSubscriptions, Notifiable;
 
     protected $fillable = [
         'name',
