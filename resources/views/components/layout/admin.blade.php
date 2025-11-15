@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="{{ asset(app()->environment('production') ? 'favicon.svg' : 'favicon-dev.svg') }}">
+    <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
     <title>@if(isset($eventName)){{ $eventName }} - @endif{{ $title ?? 'Gift Exchange - Admin' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
