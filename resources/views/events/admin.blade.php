@@ -232,13 +232,17 @@
                         <div class="flex-1">
                             <p class="font-medium text-indigo-900">Your Admin Link</p>
                             <p class="mt-1 text-sm text-indigo-700">Save this link to access your admin dashboard later</p>
-                            <div class="mt-3 flex items-center gap-2">
-                                <code class="block flex-1 rounded-md bg-white border border-indigo-200 px-3 py-2 text-sm text-gray-900 font-mono">
-                                    {{ route('events.show', $event->event_token) }}
-                                </code>
+                            <div class="mt-3 flex min-w-0 flex-col gap-2 sm:flex-row sm:items-center">
+                                <input
+                                    type="text"
+                                    readonly
+                                    value="{{ route('events.show', $event->event_token) }}"
+                                    class="block min-w-0 flex-1 rounded-md border border-indigo-200 bg-white px-3 py-2 text-sm font-mono text-gray-900"
+                                />
                                 <x-ui.copy-button
                                     :text="route('events.show', $event->event_token)"
                                     label="Copy"
+                                    class="w-full sm:w-auto sm:shrink-0"
                                 />
                             </div>
                         </div>
