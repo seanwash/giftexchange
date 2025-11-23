@@ -123,4 +123,16 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Analytics Tracking Website ID
+    |--------------------------------------------------------------------------
+    |
+    | This value is the website ID for the analytics tracking script.
+    | Set this in your ".env" file as ANALYTICS_WEBSITE_ID.
+    |
+    */
+
+    'analytics_website_id' => env('ANALYTICS_WEBSITE_ID'),
+
 ];

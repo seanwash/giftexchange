@@ -7,6 +7,7 @@
     <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
     <title>@if(isset($userName)){{ $userName }} - @endif{{ $title ?? 'Gift Exchange' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <x-analytics-tracking />
 </head>
 <body class="min-h-screen bg-gray-50 antialiased">
     <div class="min-h-screen">
